@@ -132,7 +132,13 @@ site/manuals.html
 .project-validation/
 projects/*/solution/output/
 projects/*/solution/demo-output/
+
 # Model checkpoints and large binary weights
 *.pt
 *.pth
 *.safetensors
+
+.env
+.venv/
+__pycache__/
+node_modules/
