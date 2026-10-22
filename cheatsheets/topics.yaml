@@ -285,6 +285,7 @@
 - id: reverse-engineering
   title: Reverse Engineering with rea
   kind: manual
+  explainer: inside-a-decompiler.html
   sources:
     - manuals/reverse-engineering-101
     - phases/13-tools-and-protocols/32-program-anatomy-elf-from-scratch
@@ -305,6 +306,7 @@
 - id: sglang-serving
   title: LLM Serving with SGLang
   kind: manual
+  explainer: inside-an-llm-serving-gpu.html
   sources:
     - manuals/sglang-101
 

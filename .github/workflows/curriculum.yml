@@ -50,6 +50,8 @@ on:
       - "site/build.js"
       - "site/**"
       - "scripts/agent-machine/**"
+      - "scripts/decompiler-machine/**"
+      - "scripts/gpu-machine/**"
       - "api/**"
       - "lib/**"
       - "scripts/test_agent_api.js"
@@ -107,6 +109,8 @@ on:
       - "site/build.js"
       - "site/**"
       - "scripts/agent-machine/**"
+      - "scripts/decompiler-machine/**"
+      - "scripts/gpu-machine/**"
       - "api/**"
       - "lib/**"
       - "scripts/test_agent_api.js"
@@ -162,12 +166,20 @@ jobs:
         run: node --test site/test_skills_page.js
       - name: the star note asks engaged readers at most twice
         run: node --test site/test_star_nudge.js
+      - name: lesson walkthrough syncs steps and schedules revisits
+        run: node --test site/test_lesson_walkthrough.js
       - name: agent machine simulation and page stay in sync
         run: node --test site/test_agent_machine.js
+      - name: decompiler machine simulation and page stay in sync
+        run: node --test site/test_decompiler_machine.js
+      - name: GPU machine simulation and page stay in sync
+        run: node --test site/test_gpu_machine.js
       - name: lesson highlights re-anchor and survive storage faults
         run: node --test site/test_highlights.js site/test_highlights_store.js
       - name: my highlights page filters, exports, and stays local
         run: node --test site/test_highlights_page.js
+      - name: practice pages hide the solution and progress survives storage faults
+        run: node --test site/test_practice.js site/test_practice_store.js
       - name: build the static site
         run: node site/build.js && node site/build-projects.js --strict && node site/build-agents.js
       - name: deployment bundles stay small and preserve runtime assets
